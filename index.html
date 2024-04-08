@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Stats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Word Stats</h1>
+        <textarea id="input" cols="30" rows="10"></textarea>
+        <label for="punc">Ignore Punctuation</label>
+        <input name="punc" type="checkbox" id="punc_checkbox">
+        <label for="capit">Ignore Capitalization</label>
+        <input name="capit" type="checkbox" id="capit_checkbox">
+        <div id="stats">
+            <h2>Stats</h2>
+            <p>Total Word Count: <span id="twc">0</span></p>
+            <p>Unique Word Count: <span id="uwc">0</span></p>
+            <p>Average Word Length: <span id="awl">0</span></p>
+            <p>Most Used Word: <span id="muw"></span></p>
+            <p>Least Used Word: <span id="luw"></span></p>
+            <div id="freq_list_heading">
+                <h3>Frequency List</h3>
+                <button id="copy_button">Copy</button>
+            </div>
+    
+            <ol id="freq_list">
+                
+            </ol>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
