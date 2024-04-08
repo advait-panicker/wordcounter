@@ -20,9 +20,10 @@ function updateStats() {
     if (punctuation_ignored) {
         text = text.replace(/[^\w\s']/g, ' ');
     }
-    words = text.split(/\s+/);
+    words = text.split(/\s+/).filter((word) => word.length != 0);
     total_word_count.innerText = words.length;
     if (words.length == 0) {
+        frequency_list.innerHTML = "";
         unique_word_count.innerText = "0";
         average_word_length.innerText = "0";
         most_used_word.innerText = "";
@@ -31,13 +32,10 @@ function updateStats() {
     }
     let word_counts = {};
     let total_length = 0;
-    for (let i = 1; i < words.length; i++) {
+    for (let i = 0; i < words.length; i++) {
         let word = words[i]
         if (capitlization_ignored) {
             word = word.toLowerCase();
-        }
-        if (word.length == 0) {
-            continue;
         }
         if (!word_counts[word]) {
             word_counts[word] = 0;
